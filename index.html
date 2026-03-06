@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>採用情報 | 株式会社イシイ 孵卵場</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Noto+Sans+JP:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #3a5a2e;
+    --green-mid: #5c8a44;
+    --green-light: #8ab56e;
+    --green-pale: #d4e8c2;
+    --yellow-warm: #f5c842;
+    --yellow-soft: #fdf0b0;
+    --yellow-pale: #fffbe8;
+    --cream: #fdf8f0;
+    --brown-warm: #8b6340;
+    --brown-light: #c9a882;
+    --white: #ffffff;
+    --text-dark: #2d2d2d;
+    --text-mid: #4a4a4a;
+    --text-light: #7a7a7a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background-color: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ===== HEADER ===== */
+  header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(253,248,240,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(90,138,68,0.15);
+    padding: 14px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    color: var(--green-deep);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+  }
+
+  .logo span {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--green-light);
+    display: block;
+    letter-spacing: 0.05em;
+  }
+
+  nav a {
+    font-size: 0.82rem;
+    color: var(--green-deep);
+    text-decoration: none;
+    margin-left: 28px;
+    letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--green-mid); }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse at 20% 60%, rgba(90,138,68,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(245,200,66,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 90%, rgba(138,181,110,0.12) 0%, transparent 40%),
+      var(--cream);
+    display: flex;
+    align-items: center;
+    padding: 120px 80px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* decorative eggs */
+  .hero::before {
+    content: '';
+    position: absolute;
+    right: 8%;
+    top: 15%;
+    width: 340px;
+    height: 420px;
+    background: radial-gradient(ellipse at 40% 35%, #fffef8, #fdf0b0 40%, #f5e080 80%, #e8c93a);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity: 0.55;
+    animation: floatEgg 6s ease-in-out infinite;
+    box-shadow: inset -20px -30px 60px rgba(180,140,30,0.18), 0 20px 60px rgba(180,150,30,0.12);
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    right: 18%;
+    top: 55%;
+    width: 180px;
+    height: 220px;
+    background: radial-gradient(ellipse at 40% 35%, #fffef8, #d4e8c2 50%, #8ab56e);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    opacity: 0.45;
+    animation: floatEgg 8s ease-in-out infinite reverse;
+    box-shadow: inset -10px -15px 40px rgba(60,100,40,0.12), 0 10px 40px rgba(60,100,40,0.08);
+  }
+
+  @keyframes floatEgg {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-18px) rotate(2deg); }
+  }
+
+  /* grass blades */
+  .grass-container {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 80px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .grass-blade {
+    position: absolute;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to top, var(--green-deep), var(--green-light) 60%, transparent);
+    transform-origin: bottom center;
+    border-radius: 2px 2px 0 0;
+    animation: sway 3s ease-in-out infinite;
+  }
+
+  @keyframes sway {
+    0%, 100% { transform: rotate(-8deg) scaleY(1); }
+    50% { transform: rotate(8deg) scaleY(0.95); }
+  }
+
+  .hero-content {
+    max-width: 560px;
+    animation: fadeUp 0.9s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--green-pale);
+    color: var(--green-deep);
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    padding: 6px 18px;
+    border-radius: 20px;
+    margin-bottom: 28px;
+    border: 1px solid rgba(90,138,68,0.25);
+  }
+
+  .hero h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--green-deep);
+    margin-bottom: 24px;
+    letter-spacing: 0.05em;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--green-mid);
+    position: relative;
+  }
+
+  .hero h1 em::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; left: 0; right: 0;
+    height: 6px;
+    background: var(--yellow-warm);
+    opacity: 0.45;
+    border-radius: 3px;
+    z-index: -1;
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    line-height: 1.9;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+    color: var(--white);
+    padding: 16px 40px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    box-shadow: 0 8px 30px rgba(58,90,46,0.3);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 40px rgba(58,90,46,0.38);
+  }
+
+  /* ===== SECTION BASE ===== */
+  section { padding: 100px 40px; }
+
+  .section-inner { max-width: 1000px; margin: 0 auto; }
+
+  .section-label {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: var(--green-light);
+    letter-spacing: 0.2em;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+  }
+
+  .section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px; left: 0;
+    width: 50px; height: 3px;
+    background: var(--yellow-warm);
+    border-radius: 2px;
+  }
+
+  /* ===== WORK SECTION ===== */
+  .work-section { background: var(--white); }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
+    margin-top: 30px;
+  }
+
+  .work-card {
+    background: var(--cream);
+    border-radius: 20px;
+    padding: 36px 30px;
+    border: 1px solid rgba(90,138,68,0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .work-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 80px; height: 80px;
+    background: var(--yellow-soft);
+    border-radius: 0 20px 0 100%;
+    opacity: 0.7;
+  }
+
+  .work-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(58,90,46,0.12);
+  }
+
+  .work-icon {
+    font-size: 2.2rem;
+    margin-bottom: 18px;
+    display: block;
+  }
+
+  .work-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 12px;
+  }
+
+  .work-card p {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.85;
+    font-weight: 300;
+  }
+
+  /* ===== APPEAL SECTION ===== */
+  .appeal-section {
+    background:
+      radial-gradient(ellipse at 10% 50%, rgba(90,138,68,0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 90% 50%, rgba(245,200,66,0.1) 0%, transparent 50%),
+      var(--yellow-pale);
+  }
+
+  .appeal-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-top: 30px;
+  }
+
+  .appeal-item {
+    display: flex;
+    gap: 22px;
+    align-items: flex-start;
+  }
+
+  .appeal-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--green-pale);
+    line-height: 1;
+    flex-shrink: 0;
+    font-style: italic;
+    text-shadow: 0 2px 8px rgba(58,90,46,0.08);
+  }
+
+  .appeal-text h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--green-deep);
+    margin-bottom: 10px;
+    margin-top: 8px;
+  }
+
+  .appeal-text p {
+    font-size: 0.87rem;
+    color: var(--text-mid);
+    line-height: 1.85;
+    font-weight: 300;
+  }
+
+  /* ===== REQUIREMENTS SECTION ===== */
+  .req-section { background: var(--white); }
+
+  .req-tabs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+  }
+
+  .req-tab {
+    padding: 10px 28px;
+    border-radius: 50px;
+    border: 2px solid var(--green-pale);
+    background: transparent;
+    color: var(--green-mid);
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.05em;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  .req-tab.active,
+  .req-tab:hover {
+    background: var(--green-deep);
+    border-color: var(--green-deep);
+    color: var(--white);
+  }
+
+  .req-content { display: none; }
+  .req-content.active { display: block; animation: fadeUp 0.4s ease; }
+
+  .req-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .req-table tr {
+    border-bottom: 1px solid rgba(90,138,68,0.1);
+  }
+
+  .req-table th {
+    text-align: left;
+    padding: 18px 20px;
+    font-size: 0.84rem;
+    color: var(--green-deep);
+    font-weight: 600;
+    width: 150px;
+    background: var(--green-pale);
+    border-radius: 8px 0 0 8px;
+    vertical-align: top;
+    letter-spacing: 0.05em;
+  }
+
+  .req-table td {
+    padding: 18px 24px;
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* ===== VOICES SECTION ===== */
+  .voice-section {
+    background: linear-gradient(160deg, var(--green-pale) 0%, var(--cream) 60%);
+  }
+
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+    margin-top: 30px;
+  }
+
+  .voice-card {
+    background: var(--white);
+    border-radius: 24px;
+    padding: 40px 36px;
+    box-shadow: 0 4px 24px rgba(58,90,46,0.08);
+    position: relative;
+  }
+
+  .voice-card::before {
+    content: '\201C';
+    position: absolute;
+    top: 20px; left: 28px;
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    color: var(--yellow-soft);
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .voice-text {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 2;
+    font-weight: 300;
+    margin-bottom: 28px;
+    margin-top: 20px;
+    position: relative;
+  }
+
+  .voice-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-top: 1px solid var(--green-pale);
+    padding-top: 22px;
+  }
+
+  .voice-avatar {
+    width: 54px; height: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+  }
+
+  .voice-avatar.green { background: var(--green-pale); }
+  .voice-avatar.yellow { background: var(--yellow-soft); }
+
+  .voice-author-info .name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--green-deep);
+  }
+
+  .voice-author-info .role {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    margin-top: 2px;
+    letter-spacing: 0.05em;
+  }
+
+  /* ===== APPLICATION SECTION ===== */
+  .apply-section { background: var(--cream); }
+
+  .form-wrap {
+    background: var(--white);
+    border-radius: 28px;
+    padding: 60px;
+    box-shadow: 0 8px 50px rgba(58,90,46,0.1);
+    border: 1px solid rgba(90,138,68,0.1);
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .form-group {
+    margin-bottom: 26px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--green-deep);
+    margin-bottom: 8px;
+    letter-spacing: 0.06em;
+  }
+
+  .form-group label .req-badge {
+    display: inline-block;
+    background: var(--yellow-warm);
+    color: var(--green-deep);
+    font-size: 0.68rem;
+    padding: 2px 7px;
+    border-radius: 4px;
+    margin-left: 6px;
+    font-weight: 600;
+    vertical-align: middle;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid rgba(90,138,68,0.2);
+    border-radius: 12px;
+    font-size: 0.9rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+    appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--green-mid);
+    box-shadow: 0 0 0 3px rgba(90,138,68,0.12);
+    background: var(--white);
+  }
+
+  .form-group textarea { min-height: 120px; resize: vertical; }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    cursor: pointer;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+
+  .checkbox-group input[type="checkbox"] {
+    width: 18px; height: 18px;
+    border-radius: 4px;
+    accent-color: var(--green-mid);
+    flex-shrink: 0;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, var(--green-deep), var(--green-mid));
+    color: var(--white);
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    margin-top: 12px;
+    box-shadow: 0 8px 30px rgba(58,90,46,0.28);
+    transition: transform 0.25s, box-shadow 0.25s;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 40px rgba(58,90,46,0.36);
+  }
+
+  .submit-btn:active { transform: scale(0.99); }
+
+  .privacy-note {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-top: 16px;
+    line-height: 1.7;
+  }
+
+  /* ===== SUCCESS MESSAGE ===== */
+  .success-msg {
+    display: none;
+    text-align: center;
+    padding: 50px 30px;
+  }
+
+  .success-msg .check {
+    font-size: 3.5rem;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .success-msg h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.4rem;
+    color: var(--green-deep);
+    margin-bottom: 12px;
+  }
+
+  .success-msg p {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--green-deep);
+    color: rgba(255,255,255,0.75);
+    text-align: center;
+    padding: 50px 40px;
+  }
+
+  footer .foot-logo {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.2rem;
+    color: var(--white);
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.1em;
+  }
+
+  footer .foot-sub {
+    font-size: 0.8rem;
+    color: var(--green-light);
+    letter-spacing: 0.15em;
+    margin-bottom: 24px;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+  }
+
+  footer p {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* ===== DIVIDER ===== */
+  .wave-divider {
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .wave-divider svg { display: block; width: 100%; }
+
+  /* ===== SCROLL ANIMATION ===== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 768px) {
+    header { padding: 12px 20px; }
+    nav { display: none; }
+    .hero { padding: 100px 24px 80px; }
+    .hero::before { opacity: 0.25; width: 200px; height: 250px; right: -20px; }
+    .hero::after { display: none; }
+    section { padding: 70px 24px; }
+    .form-wrap { padding: 36px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+    .req-table th { width: 100px; font-size: 0.78rem; padding: 14px 12px; }
+    .req-table td { padding: 14px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo">
+    株式会社イシイ
+    <span>Ishii Hatchery</span>
+  </div>
+  <nav>
+    <a href="#work">仕事内容</a>
+    <a href="#appeal">この仕事の魅力</a>
+    <a href="#requirements">募集要項</a>
+    <a href="#voices">先輩の声</a>
+    <a href="#apply">応募する</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <span class="hero-tag">🐣 未経験歓迎 ／ 正社員・パート募集</span>
+    <h1>
+      ひとつの命を<br>
+      <em>育てる喜び</em>を、<br>
+      あなたと。
+    </h1>
+    <p class="hero-sub">
+      卵のあたたかさを手のひらで感じながら、<br>
+      生命の誕生を見守る——。<br>
+      そんな特別な仕事があります。<br>
+      株式会社イシイの孵卵場で、一緒に働きませんか。
+    </p>
+    <a href="#apply" class="hero-cta">今すぐ応募する</a>
+  </div>
+
+  <!-- grass -->
+  <div class="grass-container" id="grassContainer"></div>
+</section>
+
+<!-- WORK -->
+<section class="work-section" id="work">
+  <div class="section-inner">
+    <span class="section-label">Our Work</span>
+    <h2 class="section-title">仕事内容のご紹介</h2>
+    <div class="work-grid">
+      <div class="work-card reveal">
+        <span class="work-icon">🥚</span>
+        <h3>卵の管理・検査</h3>
+        <p>入荷した種卵の品質確認や検卵作業を行います。専用の検卵機を使って胚の発育状態をチェックし、孵化率を高めるための環境づくりをサポートします。丁寧さと集中力が活きる仕事です。</p>
+      </div>
+      <div class="work-card reveal" style="transition-delay:0.1s">
+        <span class="work-icon">🌡️</span>
+        <h3>孵卵器の温度・湿度管理</h3>
+        <p>孵卵器内の温度・湿度・換気を一定に保つための監視と調整を行います。ひな鳥が健やかに孵化できるよう、最適な環境を24時間守ります。機械操作の基礎からしっかり教えます。</p>
+      </div>
+      <div class="work-card reveal" style="transition-delay:0.2s">
+        <span class="work-icon">🐥</span>
+        <h3>孵化の見守り・補助</h3>
+        <p>いよいよ孵化のとき。殻を破って出てくるひな鳥の様子を優しく見守り、必要に応じて補助を行います。命が生まれる瞬間に立ち会えるのは、この仕事ならではの感動体験です。</p>
+      </div>
+      <div class="work-card reveal" style="transition-delay:0.3s">
+        <span class="work-icon">💛</span>
+        <h3>ひなのケアと出荷準備</h3>
+        <p>孵化したひなの健康状態を確認し、雌雄の鑑別補助や出荷準備を行います。小さな命を丁寧に扱う作業で、思いやりと責任感が育まれます。動物が好きな方にぴったりです。</p>
+      </div>
+      <div class="work-card reveal" style="transition-delay:0.4s">
+        <span class="work-icon">🧹</span>
+        <h3>施設の清掃・衛生管理</h3>
+        <p>孵卵場を清潔に保つことは、ひなの命を守ることに直結します。器具の洗浄・消毒や施設内の環境整備を行い、衛生的な職場環境の維持に貢献していただきます。</p>
+      </div>
+      <div class="work-card reveal" style="transition-delay:0.5s">
+        <span class="work-icon">📋</span>
+        <h3>記録・データ入力</h3>
+        <p>孵化率や温度管理のデータを専用シートやパソコンに記録します。数字が苦手でも大丈夫。先輩がやさしく教えます。データの積み重ねがより良い孵化環境の実現につながります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPEAL -->
+<section class="appeal-section" id="appeal">
+  <div class="section-inner">
+    <span class="section-label">Why Work Here</span>
+    <h2 class="section-title">この仕事の魅力</h2>
+    <div class="appeal-list">
+      <div class="appeal-item reveal">
+        <div class="appeal-num">01</div>
+        <div class="appeal-text">
+          <h3>🌱 命の誕生に立ち会えるやりがい</h3>
+          <p>殻の中から「ピヨピヨ」と鳴き声が聞こえてきた瞬間——。言葉では表せない感動がここにあります。毎日の積み重ねが確かな命につながることで、深いやりがいと達成感を感じられます。日常のルーティンの中に、特別な瞬間が待っています。</p>
+        </div>
+      </div>
+      <div class="appeal-item reveal" style="transition-delay:0.15s">
+        <div class="appeal-num">02</div>
+        <div class="appeal-text">
+          <h3>📚 未経験でも安心の教育体制</h3>
+          <p>農業や養鶏の知識がなくてもまったく問題ありません。入社後は先輩スタッフがマンツーマンで指導。機械操作から衛生管理まで、ひとつひとつ丁寧に学べます。半年で一人立ちできる充実した研修プログラムを整えています。</p>
+        </div>
+      </div>
+      <div class="appeal-item reveal" style="transition-delay:0.3s">
+        <div class="appeal-num">03</div>
+        <div class="appeal-text">
+          <h3>⏰ 働きやすい環境と福利厚生</h3>
+          <p>シフト制で子育て中の方やWワーク希望の方も大歓迎。有給取得率が高く、年間休日もしっかり確保。職場はアットホームな雰囲気で、スタッフ同士で助け合いながら働いています。長く続けられる職場環境です。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REQUIREMENTS -->
+<section class="req-section" id="requirements">
+  <div class="section-inner">
+    <span class="section-label">Recruitment Info</span>
+    <h2 class="section-title">募集要項</h2>
+    <div class="req-tabs">
+      <button class="req-tab active" onclick="switchTab('seishain', this)">正社員</button>
+      <button class="req-tab" onclick="switchTab('part', this)">パート・アルバイト</button>
+    </div>
+
+    <div class="req-content active" id="seishain">
+      <table class="req-table">
+        <tr>
+          <th>職種</th>
+          <td>孵卵管理スタッフ（正社員）</td>
+        </tr>
+        <tr>
+          <th>雇用形態</th>
+          <td>正社員（試用期間3ヶ月）</td>
+        </tr>
+        <tr>
+          <th>給与</th>
+          <td>月給 200,000円〜260,000円<br><span style="font-size:0.82rem;color:var(--text-light)">※経験・スキルを考慮のうえ決定 ／ 各種手当別途支給</span></td>
+        </tr>
+        <tr>
+          <th>勤務時間</th>
+          <td>6:00〜15:00 または 8:00〜17:00（シフト制）<br><span style="font-size:0.82rem;color:var(--text-light)">※残業は月平均10時間以内</span></td>
+        </tr>
+        <tr>
+          <th>休日・休暇</th>
+          <td>週休2日制（シフトによる） ／ 年間休日110日<br>有給休暇・産前産後休暇・育児休業あり</td>
+        </tr>
+        <tr>
+          <th>応募資格</th>
+          <td>学歴・経験不問、普通自動車免許（AT可）歓迎<br>動物・自然が好きな方、コツコツ作業が得意な方</td>
+        </tr>
+        <tr>
+          <th>待遇・福利厚生</th>
+          <td>社会保険完備 ／ 交通費全額支給<br>制服貸与 ／ 資格取得支援制度あり</td>
+        </tr>
+        <tr>
+          <th>勤務地</th>
+          <td>株式会社イシイ 第一孵卵場（〒〇〇〇-〇〇〇〇 ※詳細は面接時にお伝えします）</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="req-content" id="part">
+      <table class="req-table">
+        <tr>
+          <th>職種</th>
+          <td>孵卵管理スタッフ（パート・アルバイト）</td>
+        </tr>
+        <tr>
+          <th>雇用形態</th>
+          <td>パート・アルバイト（週2日〜OK）</td>
+        </tr>
+        <tr>
+          <th>給与</th>
+          <td>時給 1,050円〜1,350円<br><span style="font-size:0.82rem;color:var(--text-light)">※経験・スキルを考慮のうえ決定 ／ 昇給あり</span></td>
+        </tr>
+        <tr>
+          <th>勤務時間</th>
+          <td>6:00〜11:00 または 9:00〜14:00（応相談）<br><span style="font-size:0.82rem;color:var(--text-light)">※扶養内勤務も調整可</span></td>
+        </tr>
+        <tr>
+          <th>休日・休暇</th>
+          <td>シフト制（希望休相談OK）<br>有給休暇あり（条件を満たした方）</td>
+        </tr>
+        <tr>
+          <th>応募資格</th>
+          <td>学歴・経験不問、主婦（夫）・学生・シニアも歓迎<br>子育て中の方・Wワーク希望の方も安心して働けます</td>
+        </tr>
+        <tr>
+          <th>待遇・福利厚生</th>
+          <td>各種保険完備（条件あり） ／ 交通費支給（上限15,000円/月）<br>制服貸与 ／ 正社員登用制度あり</td>
+        </tr>
+        <tr>
+          <th>勤務地</th>
+          <td>株式会社イシイ 第一孵卵場（〒〇〇〇-〇〇〇〇 ※詳細は面接時にお伝えします）</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- VOICES -->
+<section class="voice-section" id="voices">
+  <div class="section-inner">
+    <span class="section-label">Staff Voice</span>
+    <h2 class="section-title">先輩スタッフの声</h2>
+    <div class="voice-grid">
+      <div class="voice-card reveal">
+        <p class="voice-text">
+          もともとはスーパーのパートをしていましたが、友人の紹介で入社しました。最初は「孵卵場って何をするの？」という感じでしたが、実際に働いてみると、卵が孵化する瞬間の感動は他では味わえないものだと気づきました。先輩がとても親切で、機械の操作も3週間でほぼ覚えられました。子どもが小学生なので時間の融通が利くのもとても助かっています。毎朝ひなの顔を見るたびに「今日も頑張ろう」って思えます。
+        </p>
+        <div class="voice-author">
+          <div class="voice-avatar green">🌿</div>
+          <div class="voice-author-info">
+            <div class="name">田中 由美子（38歳）</div>
+            <div class="role">パートスタッフ ／ 入社3年目</div>
+          </div>
+        </div>
+      </div>
+      <div class="voice-card reveal" style="transition-delay:0.15s">
+        <p class="voice-text">
+          前職はまったく関係ない建設業でした。体力仕事に限界を感じて転職を考えていたときに、この求人を見つけました。動物が好きだったので興味を持って応募し、今では入社4年目になります。孵化率を上げるための温度管理にコツがあって、データを見ながら試行錯誤するのが楽しいんです。技術が身につくと数字に現れるのがやりがいです。将来は孵卵管理の専門家として施設全体をまとめられるようになりたいです。
+        </p>
+        <div class="voice-author">
+          <div class="voice-avatar yellow">🌻</div>
+          <div class="voice-author-info">
+            <div class="name">村上 健太（32歳）</div>
+            <div class="role">正社員 ／ 入社4年目</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section class="apply-section" id="apply">
+  <div class="section-inner">
+    <span class="section-label" style="text-align:center;display:block">Apply Now</span>
+    <h2 class="section-title" style="display:block;text-align:center">応募フォーム</h2>
+    <p style="text-align:center;color:var(--text-mid);font-size:0.88rem;margin-bottom:50px;font-weight:300">ご応募後、3営業日以内に担当者よりご連絡いたします。</p>
+    <div class="form-wrap">
+      <div id="formArea">
+        <div class="form-row">
+          <div class="form-group">
+            <label>お名前 <span class="req-badge">必須</span></label>
+            <input type="text" placeholder="山田 花子" id="fname">
+          </div>
+          <div class="form-group">
+            <label>フリガナ <span class="req-badge">必須</span></label>
+            <input type="text" placeholder="ヤマダ ハナコ" id="fkana">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>メールアドレス <span class="req-badge">必須</span></label>
+          <input type="email" placeholder="example@email.com" id="femail">
+        </div>
+        <div class="form-group">
+          <label>電話番号 <span class="req-badge">必須</span></label>
+          <input type="tel" placeholder="090-0000-0000" id="ftel">
+        </div>
+        <div class="form-group">
+          <label>ご希望の雇用形態 <span class="req-badge">必須</span></label>
+          <select id="ftype">
+            <option value="">選択してください</option>
+            <option value="seishain">正社員</option>
+            <option value="part">パート・アルバイト</option>
+            <option value="either">どちらでも可</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>希望勤務時間帯（複数選択可）</label>
+          <div class="checkbox-group">
+            <label><input type="checkbox" value="morning"> 早朝（6時〜）</label>
+            <label><input type="checkbox" value="daytime"> 日中（9〜15時）</label>
+            <label><input type="checkbox" value="flexible"> 相談したい</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>志望動機・自由記入欄</label>
+          <textarea id="fmotiv" placeholder="未経験ですが動物が好きで…など、お気軽にご記入ください。"></textarea>
+        </div>
+        <button class="submit-btn" onclick="handleSubmit()">応募する →</button>
+        <p class="privacy-note">
+          ご入力いただいた個人情報は採用選考のみに使用し、<br>第三者に提供することはありません。
+        </p>
+      </div>
+      <div class="success-msg" id="successMsg">
+        <span class="check">🐣</span>
+        <h3>ご応募ありがとうございます！</h3>
+        <p>
+          内容を確認のうえ、3営業日以内に<br>
+          ご登録のメールアドレスへご連絡いたします。<br>
+          ご不明な点はお電話でもお気軽にどうぞ。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-logo">株式会社イシイ</div>
+  <div class="foot-sub">Ishii Hatchery — Where Life Begins</div>
+  <p>&copy; 2025 株式会社イシイ All Rights Reserved.</p>
+</footer>
+
+<script>
+  // ---- Grass generator ----
+  const gc = document.getElementById('grassContainer');
+  for (let i = 0; i < 60; i++) {
+    const b = document.createElement('div');
+    b.className = 'grass-blade';
+    const h = 30 + Math.random() * 50;
+    const delay = Math.random() * 3;
+    const dur = 2.5 + Math.random() * 2;
+    const left = Math.random() * 100;
+    const opacity = 0.4 + Math.random() * 0.6;
+    b.style.cssText = `
+      height:${h}px; left:${left}%; opacity:${opacity};
+      animation-delay:${delay}s; animation-duration:${dur}s;
+      background: linear-gradient(to top, #3a5a2e, ${Math.random()>0.5?'#8ab56e':'#5c8a44'} 60%, transparent);
+    `;
+    gc.appendChild(b);
+  }
+
+  // ---- Intersection Observer for reveals ----
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => observer.observe(el));
+
+  // ---- Tab switching ----
+  function switchTab(id, btn) {
+    document.querySelectorAll('.req-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.req-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // ---- Form submit ----
+  function handleSubmit() {
+    const name = document.getElementById('fname').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    const tel = document.getElementById('ftel').value.trim();
+    const type = document.getElementById('ftype').value;
+
+    if (!name) { alert('お名前を入力してください。'); return; }
+    if (!email) { alert('メールアドレスを入力してください。'); return; }
+    if (!tel) { alert('電話番号を入力してください。'); return; }
+    if (!type) { alert('ご希望の雇用形態を選択してください。'); return; }
+
+    document.getElementById('formArea').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  }
+
+  // ---- Smooth scroll for anchor links ----
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+</body>
+</html>
